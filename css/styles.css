@@ -146,7 +146,7 @@ ul {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url("/images/hero-image.jpg");
+    url("../images/hero-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 1440px;
