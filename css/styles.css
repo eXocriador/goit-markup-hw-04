@@ -101,20 +101,13 @@ ul {
   font-family: inherit;
 }
 
-.nav-links,
-.nav-links-item:visited {
+.nav-links {
   display: flex;
   flex-direction: row;
   gap: 40px;
-  color: #2e2f42;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  text-decoration: none;
 }
 
-.nav-links-item {
+.nav-link-container {
   display: flex;
   flex-direction: column;
   padding: 24px 0;
@@ -122,13 +115,29 @@ ul {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-links:first-child {
+.nav-link {
+  color: #2e2f42;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-container:first-child .nav-link {
   color: #404bbf;
 }
 
-.nav-links-item:hover::after {
+.nav-link-container:hover .nav-link,
+.nav-link-container:focus .nav-link {
+  color: #404bbf;
+}
+
+.nav-link-container::after {
   position: absolute;
   content: "";
+  left: 0;
   bottom: -1px;
   border-radius: 2px;
   width: 100%;
@@ -136,18 +145,9 @@ ul {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-links-item:hover .nav-links-item::after {
+.nav-link-container:hover::after {
   background-color: #404bbf;
 }
-
-.nav-links-item:hover,
-.nav-links-item:focus {
-  color: #404bbf;
-}
-
-/* .nav-links-item:hover::after {
-  background-color: #404bbf;
-} */
 
 .address-list-item {
   font-style: normal;
@@ -356,27 +356,36 @@ ul {
 
 .team-social-container {
   display: flex;
+  justify-content: center;
   gap: 24px;
 }
 
 .team-social-icon-container {
+  width: 40px;
+  height: 40px;
+}
+
+.team-social-icon-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
   border-radius: 50%;
   background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-social-icon-container:hover {
-  background-color: #404bbf;
-}
-
 .team-social-icon {
   width: 16px;
   height: 16px;
+  fill: #f4f4fd;
+}
+
+.team-social-icon-link:hover,
+.team-social-icon-link:focus {
+  background-color: #404bbf;
 }
 
 .section-team {
@@ -385,8 +394,7 @@ ul {
 
 /* #endregion Our Team */
 
-/* #region #e7e9fc;
-folio */
+/* #region Portfolio */
 
 .portfolio-container {
   display: flex;
@@ -529,7 +537,7 @@ folio */
   color: #fff;
   margin-bottom: 16px;
 }
-.footer-social-media-links {
+.footer-social-icons-list {
   display: flex;
   gap: 16px;
 }
