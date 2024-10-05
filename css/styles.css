@@ -107,30 +107,26 @@ ul {
 
 .nav-links {
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 40px;
 }
 
-.nav-link-container {
-  display: flex;
-  flex-direction: column;
-  padding: 24px 0;
-  position: relative;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .nav-link {
+  display: block;
+  padding: 24px 0;
   color: #2e2f42;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.02em;
   text-decoration: none;
+  position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link-container:hover .nav-link,
-.nav-link-container:focus .nav-link {
+.nav-link:hover,
+.nav-link:focus {
   color: #404bbf;
 }
 
@@ -558,7 +554,7 @@ ul {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-social-media-icon {
+.footer-social-icon {
   width: 24px;
   height: 24px;
   fill: #f4f4fd;
